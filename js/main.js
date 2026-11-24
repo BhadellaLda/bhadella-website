@@ -61,5 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
     if (want) { topic.value = want; var f = topic.closest('form'); if (f) setTimeout(function () { f.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 150); }
   }
 
+  // "Request a price" buttons: open contact form with the product pre-filled
+  document.querySelectorAll('.quote-btn').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var card = a.closest('.product'), h = card && card.querySelector('h3');
+      if (!h) return;
+      e.preventDefault();
+      location.href = a.getAttribute('href') + '?p=' + encodeURIComponent(h.textContent.trim());
+    });
+  });
+  var msg = document.getElementById('f-msg'), params = new URLSearchParams(location.search), prod = params.get('p');
+  if (msg && prod) {
+    var lang = document.documentElement.lang;
+    var txt = lang === 'pt' ? 'Gostaria de saber o preço e a disponibilidade de: ' : lang === 'es' ? 'Me gustaría conocer el precio y la disponibilidad de: ' : 'I would like to know the price and availability of: ';
+    msg.value = txt + prod + '\n';
+    if (topic) topic.value = 'Prices and availability';
+    var form = msg.closest('form'); if (form) setTimeout(function () { form.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 150);
+  }
+
   var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 });
