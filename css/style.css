@@ -263,3 +263,7 @@ form.contact{scroll-margin-top:112px}
   .hero p{font-size:1.05rem}
   .dots{top:calc(100vw * 9 / 16 - 24px);bottom:auto;left:16px;right:auto}
 }
+.product .quote-btn{margin-top:14px;justify-content:center;font-size:.85rem;padding:.65em 1em;background:transparent;color:var(--green);border-color:var(--green)}
+.product .quote-btn:hover{background:var(--green);color:#fff}
+form.contact .row2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+@media (max-width:560px){form.contact .row2{grid-template-columns:1fr}.product .quote-btn{font-size:.8rem;padding:.6em .6em}}
