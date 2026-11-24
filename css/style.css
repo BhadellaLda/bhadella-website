@@ -275,3 +275,8 @@ a.card.seg-link{display:block;color:inherit;text-decoration:none;transition:tran
 a.card.seg-link:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 a.card.seg-link h3{color:var(--green-dark)}
 .site-footer h4.f2{margin-top:1.6em}
+.retail-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;max-width:900px;margin-left:auto;margin-right:auto}
+.retail-item{display:grid;place-items:center;height:110px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.retail-item img{max-height:70px;max-width:100%;height:auto;width:auto;object-fit:contain}
+.retail-item span{font-family:"Montserrat";font-weight:800;font-size:1.25rem;color:var(--green-dark);text-align:center}
+@media (max-width:560px){.retail-strip{grid-template-columns:1fr;gap:12px}.retail-item{height:84px;padding:14px 24px}.retail-item img{max-height:48px}}
